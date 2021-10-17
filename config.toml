@@ -1,3 +1,78 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = "Z's Blog"                # 设置网站标题
+theme = "LoveIt"                        # 设置主题为LoveIt
+hasCJKLanguage = true                   # 启用对中文统计的支持，不启用字数统计会出问题
+paginate = 10                           # 每页的文章数量设置为10，便于根据页数快速计算总文章数
+
+# 作者名设置
+[author]                                            
+  name = "Z"
+  
+# 菜单栏新添life页面并调整顺序
+[menu]                                               
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "posts"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "categories"
+    name = "Categories"
+    url = "categories"
+    weight = 2  
+
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "tags"
+    weight = 3
+
+  [[menu.main]]
+    identifier = "life"
+    name = "Life"
+    url = "life"
+    weight = 4
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "about"
+    weight = 5
+    
+ # 基本参数设置，包括网站描述字段、关键词、主页文章显示模式、子标题
+ [params]
+  avatar = "images/avatar.png"
+
+  description = "none"                      # site description
+  keywords = ["blog", "Hugo"]     # site keywords
+                                              
+  home_mode = "other"                                # [post, other] home mode
+  subtitle = "none"  # subtitle shown in home page
+  
+  #头像、主页社交链接
+  [params.gravatar]
+    email = "example@qq.com"
+
+  [params.social]                                    # Social Info in home page
+    GitHub = "/Zetto00"
+    Email = "example@qq.com"
+    
+  [params.publisher]
+    name = "Z"
+
+    [params.publisher.logo]
+      url = "logo.png"
+      width = 127
+      height = 40
+
+  [params.logo]
+    url = "logo.png"
+    width = 127
+    height = 40
+
+  [params.image]
+    url = "cover.png"
+    width = 800
+    height = 600
+
+  # gitalk设置涉及clientId和clientSecret，忽略
