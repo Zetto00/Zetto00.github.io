@@ -1,78 +1,52 @@
-title = "Z's Blog"                # 设置网站标题
-theme = "LoveIt"                        # 设置主题为LoveIt
-hasCJKLanguage = true                   # 启用对中文统计的支持，不启用字数统计会出问题
-paginate = 10                           # 每页的文章数量设置为10，便于根据页数快速计算总文章数
+baseURL = "http://example.org/"
+# [en, zh-cn, fr, ...] 设置默认的语言
+defaultContentLanguage = "zh-cn"
+# 网站语言, 仅在这里 CN 大写
+languageCode = "zh-CN"
+# 是否包括中日韩文字
+hasCJKLanguage = true
+# 网站标题
+title = "我的全新 Hugo 网站"
 
-# 作者名设置
-[author]                                            
-  name = "Z"
-  
-# 菜单栏新添life页面并调整顺序
-[menu]                                               
+# 更改使用 Hugo 构建网站时使用的默认主题
+theme = "LoveIt"
+
+[params]
+  # LoveIt 主题版本
+  version = "0.2.X"
+
+[menu]
   [[menu.main]]
     identifier = "posts"
-    name = "Posts"
-    url = "posts"
+    # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
+    pre = ""
+    # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
+    post = ""
+    name = "文章"
+    url = "/posts/"
+    # 当你将鼠标悬停在此菜单链接上时, 将显示的标题
+    title = ""
     weight = 1
-
-  [[menu.main]]
-    identifier = "categories"
-    name = "Categories"
-    url = "categories"
-    weight = 2  
-
   [[menu.main]]
     identifier = "tags"
-    name = "Tags"
-    url = "tags"
+    pre = ""
+    post = ""
+    name = "标签"
+    url = "/tags/"
+    title = ""
+    weight = 2
+  [[menu.main]]
+    identifier = "categories"
+    pre = ""
+    post = ""
+    name = "分类"
+    url = "/categories/"
+    title = ""
     weight = 3
 
-  [[menu.main]]
-    identifier = "life"
-    name = "Life"
-    url = "life"
-    weight = 4
-
-  [[menu.main]]
-    identifier = "about"
-    name = "About"
-    url = "about"
-    weight = 5
-    
- # 基本参数设置，包括网站描述字段、关键词、主页文章显示模式、子标题
- [params]
-  avatar = "images/avatar.png"
-
-  description = "none"                      # site description
-  keywords = ["blog", "Hugo"]     # site keywords
-                                              
-  home_mode = "other"                                # [post, other] home mode
-  subtitle = "none"  # subtitle shown in home page
-  
-  #头像、主页社交链接
-  [params.gravatar]
-    email = "example@qq.com"
-
-  [params.social]                                    # Social Info in home page
-    GitHub = "/Zetto00"
-    Email = "example@qq.com"
-    
-  [params.publisher]
-    name = "Z"
-
-    [params.publisher.logo]
-      url = "logo.png"
-      width = 127
-      height = 40
-
-  [params.logo]
-    url = "logo.png"
-    width = 127
-    height = 40
-
-  [params.image]
-    url = "cover.png"
-    width = 800
-    height = 600
-
-  # gitalk设置涉及clientId和clientSecret，忽略
+# Hugo 解析文档的配置
+[markup]
+  # 语法高亮设置 (https://gohugo.io/content-management/syntax-highlighting)
+  [markup.highlight]
+    # false 是必要的设置 (https://github.com/dillonzq/LoveIt/issues/158)
+    noClasses = false
