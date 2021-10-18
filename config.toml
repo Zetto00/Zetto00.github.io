@@ -82,10 +82,13 @@ enableEmoji = true
   [markup.highlight]
     codeFences = true
     guessSyntax = true
+
+    # 代码行数设置
     lineNos = true
+    lineNoStart = 1
     lineNumbersInTable = true
     tabWidth = 4
-    lineNoStart = 1
+    
     #style = "monokai"
 
     # (https://github.com/dillonzq/LoveIt/issues/158)
@@ -275,55 +278,6 @@ enableEmoji = true
     # 许可协议信息 (支持 HTML 格式)
     license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
 
-  #  Section (所有文章) 页面配置
-  [params.section]
-    # section 页面每页显示文章数量
-    paginate = 20
-    # 日期格式 (月和日)
-    dateFormat = "01-02"
-    # RSS 文章数目
-    rss = 10
-
-  #  List (目录或标签) 页面配置
-  [params.list]
-    # list 页面每页显示文章数量
-    paginate = 20
-    # 日期格式 (月和日)
-    dateFormat = "01-02"
-    # RSS 文章数目
-    rss = 10
-
-  #  搜索配置
-  [params.search]
-    enable = true
-    # 搜索引擎的类型 ("lunr", "algolia")
-    type = "lunr"
-    # 文章内容最长索引长度
-    contentLength = 4000
-    # 搜索框的占位提示语
-    placeholder = ""
-    #  最大结果数目
-    maxResultLength = 10
-    #  结果内容片段长度
-    snippetLength = 50
-    #  搜索结果中高亮部分的 HTML 标签
-    highlightTag = "em"
-    #  是否在搜索索引中使用基于 baseURL 的绝对路径
-    absoluteURL = false
-    [params.search.algolia]
-      index = ""
-      appID = ""
-      searchKey = ""
-
-  #  第三方库文件的 CDN 设置
-  [params.cdn]
-    # CDN 数据文件名称, 默认不启用
-    # ("jsdelivr.yml")
-    # 位于 "themes/LoveIt/assets/data/cdn/" 目录
-    # 可以在你的项目下相同路径存放你自己的数据文件:
-    # "assets/data/cdn/"
-    data = ""
-
   #  文章页面配置
   [params.page]
 
@@ -343,7 +297,7 @@ enableEmoji = true
       #  是否保持使用文章前面的静态目录
       keepStatic = false
       # 是否使侧边目录自动折叠展开
-      auto = true
+      auto = false
     #  是否使用 twemoji
     twemoji = false
     #  是否使用 ruby 扩展语法
@@ -487,6 +441,56 @@ enableEmoji = true
         label = ""
         lightTheme = "github-light"
         darkTheme = "github-dark"
+
+  #  Section (所有文章) 页面配置
+  [params.section]
+    # section 页面每页显示文章数量
+    paginate = 20
+    # 日期格式 (月和日)
+    dateFormat = "01-02"
+    # RSS 文章数目
+    rss = 10
+
+  #  List (目录或标签) 页面配置
+  [params.list]
+    # list 页面每页显示文章数量
+    paginate = 20
+    # 日期格式 (月和日)
+    dateFormat = "01-02"
+    # RSS 文章数目
+    rss = 10
+
+  #  搜索配置
+  [params.search]
+    enable = true
+    # 搜索引擎的类型 ("lunr", "algolia")
+    type = "lunr"
+    # 文章内容最长索引长度
+    contentLength = 4000
+    # 搜索框的占位提示语
+    placeholder = ""
+    #  最大结果数目
+    maxResultLength = 10
+    #  结果内容片段长度
+    snippetLength = 50
+    #  搜索结果中高亮部分的 HTML 标签
+    highlightTag = "em"
+    #  是否在搜索索引中使用基于 baseURL 的绝对路径
+    absoluteURL = false
+    [params.search.algolia]
+      index = ""
+      appID = ""
+      searchKey = ""
+
+  #  第三方库文件的 CDN 设置
+  [params.cdn]
+    # CDN 数据文件名称, 默认不启用
+    # ("jsdelivr.yml")
+    # 位于 "themes/LoveIt/assets/data/cdn/" 目录
+    # 可以在你的项目下相同路径存放你自己的数据文件:
+    # "assets/data/cdn/"
+    data = ""
+
     #  第三方库配置
     [params.page.library]
       [params.page.library.css]
@@ -541,7 +545,7 @@ enableEmoji = true
     # 是否隐藏网站图标资源链接
     noFavicon = false
     # 更现代的 SVG 网站图标, 可替代旧的 .png 和 .ico 文件
-    svgFavicon = ""
+    #svgFavicon = ""
     # Android 浏览器主题色
     themeColor = "#ffffff"
     # Safari 图标颜色
