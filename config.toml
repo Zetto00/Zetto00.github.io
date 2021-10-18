@@ -34,7 +34,7 @@ enableEmoji = true
 
 # Permalinks Info (https://gohugo.io/content-management/urls/#permalinks)
 [Permalinks]
-  posts = ":year/:slug"
+  posts = ":year/:month/:slug"
 
 # 网站地图配置
 [sitemap]
