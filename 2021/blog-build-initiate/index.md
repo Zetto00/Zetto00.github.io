@@ -3,11 +3,11 @@
 
 本博客使用 GitHub Pages、Hugo 和 LoveIt，可以麻烦地定制化博客。
 
-## 前期准备
+## 准备
 
 ### 安装 Hugo
 
-详细的安装说明请参考 [官方文档](https://gohugo.io/getting-started/installing/)。注意安装 $> 0.62.0$ 的 extended 版本。
+详细的安装说明请参考 [官方文档](https://gohugo.io/getting-started/installing/)。注意安装 extended 版本。
 
 macOS 下可使用包管理工具 [Homebrew](https://brew.sh)[^Homebrew]快速安装：
 
@@ -33,7 +33,7 @@ hugo version
 
 ### 安装 Git
 
-从 [官方网站](https://git-scm.com) 下载。或使用命令行：
+从 [官方网站](https://git-scm.com) 下载，或使用命令行：
 
 ```sh
 brew install git
@@ -43,24 +43,55 @@ brew install git
 choco install git -y
 ```
 
+### 创建 GitHub 仓库
+
+注册一个 [GitHub](https://github.com) 账号。注意：用户名与随后创建的博客网址强相关。在个人主界面里选择 `Create a repository`。在 `Repository name` 的位置填写域名，格式是 `username.GitHub.io`。
+
+{{< admonition tip "技巧">}}
+仓库名为 `username.GitHub.io`，则 GitHub Pages 网址为  `username.GitHub.io`。
+
+仓库名为 `reponame.GitHub.io`，则 GitHub Pages 网址为  `username.GitHub.io/reponame.GitHub.io`。
+{{< /admonition >}}
+
+## 创建你的第一篇博客！
+
+执行下述命令在本地生成博客网站项目文件夹，该文件夹是这一系列文章之后所有操作执行的根目录（简称为项目根目录）：
+
+```sh
+hugo new site username.github.io # 和仓库名相同
+cd username.github.io
+```
+
+将本地的项目文件夹初始化为 Github 仓库并推送到远程仓库：
+
+```sh
+git init
+git add .
+git commit -m "Initial commit"
+```
+
 ## 附录 科学访问 GitHub
 
-由于 DNS 污染[^DNS]和 SNI 封锁[^SNI] ，GitHub 间歇性可连接。使用项目 [dev-sidecar](https://github.com/docmirror/dev-sidecar) 可以科学访问 GitHub。其 [原理](https://github.com/docmirror/dev-sidecar/blob/master/doc/caroot.md) 是在本地启动代理服务器帮助访问目标网站；当目标网站需要拦截时（例如github），就需要通过中间人攻击修改请求或者请求其他替代网站，从而达到加速的目的。注意打开 `Git.exe代理` 选项。
+由于 DNS 污染[^DNS]和 SNI 封锁[^SNI] ，GitHub 间歇性可连接。
+
+使用项目 [dev-sidecar](https://github.com/docmirror/dev-sidecar) 可以科学访问 GitHub。其 [原理](https://github.com/docmirror/dev-sidecar/blob/master/doc/caroot.md) 是在本地启动代理服务器帮助访问目标网站；当目标网站需要拦截时（例如 github），就通过中间人攻击修改请求或者请求其他替代网站，从而达到科学的目的。
+
+由于浏览器和命令行访问网站原理不同，要打开 `Git.exe代理` 选项。
+
+{{< admonition warning "警告" >}}
+`加速服务`-`基本设置`-`日志`中记录下了浏览器访问的所有网站。在不需要访问 GitHub 时可以把软件关掉。
+{{< /admonition >}}
 
 ## 附录 Homebrew 安装与加速
 
-使用 `echo $0` 查看所使用的 shell。若为 bash 则将下文对应 `zsh` 改为 `bash`，`.zshrc` 改为 `.bash_profile`，
+{{< admonition note "注意" >}}
+使用 `echo $0` 查看所使用的 shell。若为 bash 则将下文对应 `zsh` 改为 `bash`，`.zshrc` 改为 `.bash_profile`。
+{{< /admonition >}}
 
 安装 Homebrew：
 
 ```sh
 /bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
-```
-
-若还未安装 Git：
-
-```sh
-brew install git
 ```
 
 使 Homebrew 从更快的源下载：
@@ -99,10 +130,20 @@ homebrew update
 brew config
 ```
 
+卸载 Homebrew：
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
+```
 
 
-[^Homebrew]: 参见附录。
-[^DNS]: Domain Name System，一个域名有多个服务器，域名解析至不正确的 IP。
-[^SNI]: Server Name Indication，一个服务器有多个域名，目标域名明文传递。
+
+
+
+
+
+[^Homebrew]:参见附录
+[^DNS]: Domain Name System；域名解析至缓慢或错误的 IP
+[^SNI]: Server Name Indication；服务器支持多个域名，目标域名明文传递
 
 
