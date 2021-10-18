@@ -1,6 +1,8 @@
 # 博客搭建笔记
 
 
+<!--more-->
+
 本博客使用 GitHub Pages、Hugo 和 LoveIt，可以麻烦地定制化博客。
 
 ## 准备
