@@ -46,7 +46,7 @@ hugo version
 
 [^GitHub]: 科学参见附录 II
 
-{{< admonition tip "技巧">}}
+{{< admonition tip "提示">}}
 仓库名为 `username.GitHub.io`，则生成网址为  `username.GitHub.io`。
 
 仓库名为 `repo_name`，则生成网址为  `username.GitHub.io/repo_name`。
@@ -71,7 +71,7 @@ git config --global user.name "x"
 git config --global user.email xx@example.com
 ```
 
-{{< admonition tip "Xcode" false>}}
+{{< admonition tip "关于 Xcode" false>}}
 macOS 下若安装了 Xcode，则自动安装了 Git。
 {{< /admonition >}}
 
@@ -214,7 +214,7 @@ git checkout -b blog
 git push --set-upstream origin blog
 ```
 
-{{< admonition note "验证" false>}}
+{{< admonition note "验证是否关联成功" false>}}
 
 检查分支跟踪关系：
 
@@ -222,7 +222,7 @@ git push --set-upstream origin blog
 git branch -vv
 ```
 
-可以看到类似于 `* blog c63526c [origin/blog] Update posts` 的字样。此时可能进入了 `vim` 编辑器模式，输入 `:wq` 退出编辑器。
+可以看到类似于 `* blog c63526c [origin/blog] Update posts` 的字样。此时可能进入了 `vim` 编辑器模式，输入 `:wq` 保存并退出编辑器。
 
 {{< /admonition >}}
 
@@ -1000,7 +1000,9 @@ echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 source ~/.zshrc
 ```
 
-Homebrew Cask 可以下载常见的带界面的应用软件。
+{{<admonition tip "Homebrew Cask" false>}}
+
+Homebrew Cask 可以下载常见的带界面的应用软件：
 
 ```bash
 brew install cask
@@ -1010,6 +1012,8 @@ git -C "$(brew --repo homebrew/cask)" remote set-url origin https://mirrors.ustc
 cd
 homebrew update
 ```
+
+{{</admonition>}}
 
 验证 Homebrew 是否配置成功：
 
