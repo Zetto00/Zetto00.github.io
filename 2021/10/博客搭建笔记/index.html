@@ -17,7 +17,7 @@
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://Zetto.github.io/2021/10/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B0/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"博客搭建笔记","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/Zetto.github.io\/2021\/10\/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B0\/"},"genre":"posts","keywords":"技术","wordcount":7095,"url":"http:\/\/Zetto.github.io\/2021\/10\/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B0\/","datePublished":"2021-10-18T17:19:39+08:00","dateModified":"2021-10-19T00:00:00+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Z"},"description":"Hello, blog!"}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://Zetto.github.io/2021/10/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B0/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"博客搭建笔记","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/Zetto.github.io\/2021\/10\/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B0\/"},"genre":"posts","keywords":"技术","wordcount":7148,"url":"http:\/\/Zetto.github.io\/2021\/10\/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B0\/","datePublished":"2021-10-18T17:19:39+08:00","dateModified":"2021-10-19T00:00:00+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Z"},"description":"Hello, blog!"}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -85,7 +85,7 @@
 <div class="toc-content always-active" id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">博客搭建笔记</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://Zetto00.github.io/about/ title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Z</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B0/><i class="far fa-folder fa-fw"></i>博客搭建笔记</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-10-18>2021-10-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 7095 字&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-10-18>2021-10-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 7148 字&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 15 分钟&nbsp;</div>
 </div><div class="details toc" id=toc-static kept>
 <div class="details-summary toc-title">
@@ -244,9 +244,11 @@ git config --global user.email xx@example.com
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
+</span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>hugo new site username.github.io <span class=c1># 和仓库名相同</span>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># 命令行先处于你喜欢的文件夹下</span>
+hugo new site username.github.io <span class=c1># 目录名任取</span>
 <span class=nb>cd</span> username.github.io
 </code></pre></td></tr></table>
 </div>
@@ -290,7 +292,7 @@ git config --global user.email xx@example.com
 <pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git add . <span class=c1># 添加所有文件到暂存区</span>
 git commit -m <span class=s2>&#34;Initial commit&#34;</span> <span class=c1># 提交暂存区到仓库区</span>
 git remote add origin https://&lt;token&gt;@github.com/&lt;username&gt;/&lt;repo_name&gt;.git
-git push -u origin master <span class=c1># -u 将本地 master 分支与远程 master 分支关联</span>
+git push -u origin master <span class=c1># -u 记录了远程主机的默认值，并将本地 master 分支与远程 master 分支关联</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id=22-安装主题>2.2 安装主题</h3>
@@ -445,22 +447,24 @@ git push -u origin master <span class=c1># -u 将本地 master 分支与远程 m
 <h3 id=23-部署网站>2.3 部署网站</h3>
 <p>利用 <a href=https://docs.github.com/cn/actions target=_blank rel="noopener noreffer">Github Actions</a> 可以帮助我们一键部署博客到网站上。</p>
 <h4 id=231-配置-github-actions>2.3.1 配置 GitHub Actions</h4>
-<p>新建、切换、跟踪到 <code>blog</code> 分支：</p>
+<p>创建 <code>blog</code> 分支：</p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
+</span><span class=lnt>4
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git checkout -b blog 
-<span class=c1># 将本地 blog 分支关联到远程</span>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># 新建并切换到 blog 分支</span>
+git checkout -b blog 
+<span class=c1># 在远程创建 blog 分支，并将本地 blog 分支与远程 blog 分支关联</span>
 git push --set-upstream origin blog
 </code></pre></td></tr></table>
 </div>
 </div><div class="details admonition note">
 <div class="details-summary admonition-title">
-<i class="icon fas fa-pencil-alt fa-fw"></i>验证是否关联成功<i class="details-icon fas fa-angle-right fa-fw"></i>
+<i class="icon fas fa-pencil-alt fa-fw"></i>验证是否跟踪成功<i class="details-icon fas fa-angle-right fa-fw"></i>
 </div>
 <div class=details-content>
 <div class=admonition-content><p>检查分支跟踪关系：</p>
@@ -472,7 +476,8 @@ git push --set-upstream origin blog
 <pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git branch -vv
 </code></pre></td></tr></table>
 </div>
-</div><p>可以看到类似于 <code>* blog c63526c [origin/blog] Update posts</code> 的字样。此时可能进入了 <code>vim</code> 编辑器模式，输入 <code>:wq</code> 保存并退出编辑器。</p>
+</div><p>可以看到类似于 <code>* blog c63526c [origin/blog] Update posts</code> 的字样。</p>
+<p>此时可能进入了 <code>vim</code> 编辑器模式，输入 <code>:wq</code> 保存并退出编辑器。</p>
 </div>
 </div>
 </div>
@@ -1867,7 +1872,7 @@ git push
 </span><span class=lnt>4
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># 注意当前要处于 blog 分支</span>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># 注意当前要处于根目录和 blog 分支</span>
 git add .
 git commit -m <span class=s2>&#34;&#34;</span> <span class=c1># 对本次提交的描述</span>
 git push
@@ -1979,10 +1984,10 @@ homebrew update
 <hr>
 <ol>
 <li id=fn:1 role=doc-endnote>
-<p>安装参见附录 I&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+<p>安装请参考附录 I&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
 </li>
 <li id=fn:2 role=doc-endnote>
-<p>科学参见附录 II&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+<p>科学访问请参考附录 II&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
 </li>
 <li id=fn:3 role=doc-endnote>
 <p>Domain Name System；域名解析至缓慢或错误的 IP&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
