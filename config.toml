@@ -145,9 +145,9 @@ enableEmoji = true
       #  主页显示的网站标题 (支持 HTML 格式)
       title = ""
       # 主页显示的网站副标题
-      subtitle = ""
+      subtitle = "无声呐喊"
       # 是否为副标题显示打字机动画
-      typeit = true
+      typeit = false
       # 是否显示社交账号
       social = true
       #  免责声明 (支持 HTML 格式)
@@ -163,20 +163,20 @@ enableEmoji = true
 
   # 作者的社交信息设置
   [params.social]
-    [params.social.GitHub]
-     # 排列图标时的权重
-      weight = 1
-      # 你的社交 ID
-      id = "Zetto00"
-      # 你的社交链接的前缀
-     prefix = "https://github.com/"
-      # 当鼠标停留在图标上时的提示内容
-      title = "GitHub"
-    [params.social.Douban]
-      weight = 0
-      id = "156817278"
-      prefix = "https://www.douban.com/people/"
-      title = "豆瓣"
+    #[params.social.GitHub]
+#     # 排列图标时的权重
+#      weight = 1
+#      # 你的社交 ID
+#      id = "Zetto00"
+#      # 你的社交链接的前缀
+#     prefix = "https://github.com/"
+#      # 当鼠标停留在图标上时的提示内容
+#      title = "GitHub"
+#    [params.social.Douban]
+#      weight = 0
+#      id = "156817278"
+#      prefix = "https://www.douban.com/people/"
+#      title = "豆瓣"
 
     #Email = "xxxx@xxxx.com"
     #RSS = true
