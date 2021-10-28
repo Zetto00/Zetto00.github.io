@@ -145,7 +145,7 @@ enableEmoji = true
       #  主页显示的网站标题 (支持 HTML 格式)
       title = ""
       # 主页显示的网站副标题
-      subtitle = "🙏"
+      subtitle = "希望人没事🙏"
       # 是否为副标题显示打字机动画
       typeit = false
       # 是否显示社交账号
@@ -160,6 +160,43 @@ enableEmoji = true
       #  被 params.page 中的 hiddenFromHomePage 替代
       # 当你没有在文章前置参数中设置 "hiddenFromHomePage" 时的默认行为
       defaultHiddenFromHomePage = false
+
+  # 页面头部导航栏配置
+  [params.header]
+    # 桌面端导航栏模式 ("fixed", "normal", "auto")
+    desktopMode = "fixed"
+    # 移动端导航栏模式 ("fixed", "normal", "auto")
+    mobileMode = "auto"
+    #  页面头部导航栏标题配置
+    [params.header.title]
+      # LOGO 的 URL
+      logo = "/images/logo.png"
+      # 标题名称
+      name = "          Z"
+      # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
+      pre = ""
+      # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
+      post = ""
+      #  是否为标题显示打字机动画
+      typeit = false
+
+  # 页面底部信息配置
+  [params.footer]
+    enable = true
+    #  自定义内容 (支持 HTML 格式)
+    custom = ''
+    #  是否显示 Hugo 和主题信息
+    hugo = false
+    #  是否显示版权信息
+    copyright = true
+    #  是否显示作者
+    author = true
+    # 网站创立年份
+    since = 2021
+    # ICP 备案信息，仅在中国使用 (支持 HTML 格式)
+    icp = ""
+    # 许可协议信息 (支持 HTML 格式)
+    license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
 
   # 作者的社交信息设置
   [params.social]
@@ -240,43 +277,6 @@ enableEmoji = true
     #Gitea = ""
     #XMPP = ""
     #Matrix = ""
-
-  # 页面头部导航栏配置
-  [params.header]
-    # 桌面端导航栏模式 ("fixed", "normal", "auto")
-    desktopMode = "fixed"
-    # 移动端导航栏模式 ("fixed", "normal", "auto")
-    mobileMode = "auto"
-    #  页面头部导航栏标题配置
-    [params.header.title]
-      # LOGO 的 URL
-      logo = "/images/logo.png"
-      # 标题名称
-      name = ""
-      # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
-      pre = ""
-      # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
-      post = ""
-      #  是否为标题显示打字机动画
-      typeit = false
-
-  # 页面底部信息配置
-  [params.footer]
-    enable = true
-    #  自定义内容 (支持 HTML 格式)
-    custom = ''
-    #  是否显示 Hugo 和主题信息
-    hugo = false
-    #  是否显示版权信息
-    copyright = true
-    #  是否显示作者
-    author = true
-    # 网站创立年份
-    since = 2021
-    # ICP 备案信息，仅在中国使用 (支持 HTML 格式)
-    icp = ""
-    # 许可协议信息 (支持 HTML 格式)
-    license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
 
   #  文章页面配置
   [params.page]
