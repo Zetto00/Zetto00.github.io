@@ -16,9 +16,7 @@
 
 详细的安装说明请参考 [官方文档](https://gohugo.io/getting-started/installing/)。注意安装 extended 版本。
 
-macOS 下可使用包管理工具 [Homebrew](https://brew.sh)[^Homebrew] 快速安装：
-
-[^Homebrew]:安装请参考附录 I
+macOS 下可使用包管理工具 [Homebrew](https://brew.sh) 快速安装：
 
 ```bash
 brew install hugo
@@ -44,7 +42,7 @@ hugo version
 
 注册一个 [GitHub](https://github.com)[^GitHub] 账号。注意：用户名与随后创建的博客网址强相关。在个人主界面里选择 “Create a repositor”。在 “Repository name” 的位置填写域名，格式是 `username.GitHub.io`，记作 `repo_name`。
 
-[^GitHub]: 科学访问请参考附录 II
+[^GitHub]: 科学访问请参考附录 I
 
 {{< admonition tip "提示">}}
 仓库名为 `username.GitHub.io`，则生成网址为  `username.GitHub.io`。
@@ -973,59 +971,7 @@ git push
 
 等待数分钟，GitHub Actions 的 `workflow` 完成后，到 `https://username.github.io` 查看博客。
 
-## 附录 I Homebrew 安装与加速
-
-{{< admonition note "注意" >}}
-使用 `echo $0` 查看所使用的 shell。若为 bash 则将下文对应 `zsh` 改为 `bash`，`.zshrc` 改为 `.bash_profile`。
-{{< /admonition >}}
-
-安装 Homebrew：
-
-```bash
-/bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
-```
-
-由于 GitHub 一般访问较慢，使 Homebrew 从更快的源下载：
-
-```bash
-cd "$(brew --repo)"
-git remote set-url origin https://mirrors.ustc.edu.cn/brew.git
-cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
-git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
-cd
-brew update
-```
-
-Homebrew 默认从 Homebrew Bottles 源中下载二进制代码包安装。使 Homebrew Bottles 从更快的源下载：
-
-```bash
-# 使用 echo $0 查看所使用的 shell。若为 bash 则将 .zshrc 改为 .bash_profile
-echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' >> ~/.zshrc
-source ~/.zshrc
-```
-
-{{<admonition tip "Homebrew Cask" false>}}
-
-Homebrew Cask 可以下载常见的带界面的应用软件：
-
-```bash
-brew install cask
-cd "$(brew --repo)/Library/Taps/homebrew/homebrew-cask"
-git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git
-git -C "$(brew --repo homebrew/cask)" remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git
-cd
-homebrew update
-```
-
-{{</admonition>}}
-
-验证 Homebrew 是否配置成功：
-
-```bash
-brew config
-```
-
-## 附录 II 科学访问 GitHub
+## 附录 I 科学访问 GitHub
 
 由于 DNS 污染[^DNS] 和 SNI 封锁[^SNI] ，GitHub 间歇性可连接。
 
@@ -1040,7 +986,7 @@ brew config
 “加速服务” - “基本设置” - “日志” 中记录下了访问的所有网站。在不需要访问 GitHub 时可以把软件关掉。
 {{< /admonition >}}
 
-## 附录 III 参考链接
+## 附录 II 参考链接
 
 [1]：[LoveIt 文档](https://hugoloveit.com/zh-cn/posts/)
 
