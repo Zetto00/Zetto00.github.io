@@ -10,7 +10,7 @@ languageCode = "zh-CN"
 hasCJKLanguage = true
 
 # 网站标题
-title = "Z's Blog"
+title = " Z's Blog"
 
 # 更改使用 Hugo 构建网站时使用的默认主题
 theme = "LoveIt"
@@ -145,7 +145,7 @@ enableEmoji = true
       #  主页显示的网站标题 (支持 HTML 格式)
       title = ""
       # 主页显示的网站副标题
-      subtitle = "希望人没事🙏"
+      subtitle = "补作业第 1 天"
       # 是否为副标题显示打字机动画
       typeit = false
       # 是否显示社交账号
@@ -172,7 +172,7 @@ enableEmoji = true
       # LOGO 的 URL
       logo = "/images/logo.png"
       # 标题名称
-      name = "          Z"
+      name = "Z's Blog"
       # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
       pre = ""
       # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
