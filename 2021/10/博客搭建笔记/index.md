@@ -70,7 +70,7 @@ git config --global user.email xx@example.com
 ```
 
 {{< admonition tip "关于 Xcode" false>}}
-macOS 下若安装了 Xcode，则自动安装了 Git。
+macOS 下若安装过 Xcode，则自动安装了 Git。
 {{< /admonition >}}
 
 ## 2 发布你的第一篇博客！
@@ -234,7 +234,7 @@ git branch -vv
 
 ```bash
 ssh-keygen -t rsa -b 4096 -C "$(git config user.email)" -f blog -N ""
-# You will get 2 files in current file:
+# 在此命令运行的目录下得到两个文件：
 #   blog.pub (public key)
 #   blog     (private key)
 ```
@@ -292,7 +292,7 @@ git push
 
 我们解决这一问题的方法是新建 `blog` 分支将博客源码放在该分支下，利用 Github Actions 将 `/public` 目录下的网站文件推送到 `master` 分支。
 
-Github Actions 使用一种模块化的思路，即将很多持续集成的操作写成独立的脚本文件，放到代码仓库，让其它开发者使用。因此进行持续集成时，可以直接引用别人写好的 actions，整个持续集成的过程，就是一个 actions 组合的过程。GitHub 做了一个[官方市场](https://github.com/marketplace?type=actions)，可以搜索到他人提交的 actions。另外，还有一个 [awesome actions](https://github.com/sdras/awesome-actions) 的仓库，也可以找到不少 actions。
+Github Actions 使用一种模块化的思路，即将很多持续集成的操作写成独立的脚本文件，放到代码仓库，让其它开发者使用。因此进行持续集成时，可以直接引用别人写好的 actions，整个持续集成的过程，就是一个 actions 组合的过程。GitHub 做了一个 [官方市场](https://github.com/marketplace?type=actions)，可以搜索到他人提交的 actions。另外，还有一个 [awesome actions](https://github.com/sdras/awesome-actions) 的仓库，也可以找到不少 actions。
 
 我们的基本思路如下：
 
@@ -951,6 +951,8 @@ enableEmoji = true
 ```bash
 hugo new posts/title.md
 ```
+
+修改 [前置参数](https://hugoloveit.com/zh-cn/theme-documentation-content/#front-matter)。
 
 利用 [LoveIt](https://hugoloveit.com/zh-cn/posts/) 提供的各种样式撰写文章。
 
