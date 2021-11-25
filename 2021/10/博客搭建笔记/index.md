@@ -226,7 +226,7 @@ git branch -vv
 生成公私钥供 Github Action 使用：
 
 ```bash
-ssh-keygen -t rsa -b 4096 -C "example@mail.com" -f blog -N ""
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com" -f blog -N ""
 # 在此命令运行的目录下得到两个文件：
 #   blog.pub (public key)
 #   blog     (private key)
