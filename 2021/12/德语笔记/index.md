@@ -7,7 +7,7 @@
 
 ## 语音
 
-<u>未完成</u>
+（未完成）
 
 ## 语法
 
@@ -34,6 +34,8 @@
 |  G.  | eines | einer | eines |
 |  D.  | einem | einer | einem |
 |  A.  | einen | eine  | ein   |
+
+> Das ist ein Haus. Das Haus ist groß.
 
 ### 人称代词的第一格
 
@@ -102,32 +104,111 @@ du 和 ihr 比较亲切，随和，用于家人、朋友、学生、孩子之间
 
 1. 支配第三、四格的介词：in，an，auf
 
-   1. in	
+   (1) in	
 
-      * （D）在……里面；在……时候
+   * （D.）在……里面；在……时候
 
-        > Ich lese in dem Lesesaal.
+     > Ich lese im Lesesaal.
 
-      * （A）到……里面去
+   * （A.）到……里面去
 
-        > Ich gehe in den Lesesaal.
+     > Ich gehe in den Lesesaal.
 
-   2. an
+   (2) an
 
-      * （D）在……旁边；在……时候
+   * （D.）在……旁边；在……时候
 
-        > Der Platz an dem Fenster ist frei.
+     > Der Platz am Fenster ist frei.
 
-      * （A）到……旁；向……
+   * （A.）到……旁；向……
 
-        > Bitte, kommen Sie an das Fenster!
+     > Bitte, kommen Sie ans Fenster!
 
+   (3) auf
    
+   * (D.) 在……上面；在……时候
+   
+     > Die Bücher sind auf dem Tisch.
+   
+   * (A.) 到……上面；以……方式
+   
+     > Ich lege das Buch auf den Tisch.
 
-<u>未完成</u>
+2. 支配第三格的介词：bei，zu，aus
+
+   (1) bei
+
+   * （D.）在……方面；在某人处
+
+     > Ich helfe Inge beim Studium.
+     >
+     > Ich wohne bei Frau Schmidt.
+
+   (2) zu
+
+   * （D.）向……；为了
+
+     > Wir gehen zum Abendessen.
+     >
+     > Ich gehe zur Mensa.
+
+   (3) aus
+
+   * （D.）从……出来；由……构成
+
+     > Hans kommt aus dem Zimmer.
+     >
+     > Der Tisch ist aus Holz.
+     >
+     > Peter kommt aus Bonn.
+
+3. 缩写
+
+|      | dem  | der  | das  |
+| :--: | ---- | ---- | ---- |
+|  in  | im   |      | ins  |
+|  an  | am   |      | ans  |
+| auf  |      |      | aufs |
+| bei  | beim |      |      |
+|  zu  | zum  | zur  |      |
+
+### 否定词 nicht 和 kein
+
+1. nicht 的用法
+
+   * 否定动词谓语，一般位于句末
+   
+     > Frau Müller kommt nicht.
+   
+   * 否定其他句子成分，位于该句子成分前
+   
+     > Frau Müller kommt nicht zum Unterricht.
+     >
+     > Der Lesesaal ist nicht groß, aber ruhig.
+
+2. kein 的用法
+
+   kein 否定带不定冠词或不带冠词的名词，其性、数、格与被否定的名词一致。
+
+   | Si.  | 阳     | 阴     | 中     | Pl.    |
+   | :--: | ------ | ------ | ------ | ------ |
+   |  N.  | kein   | keine  | kein   | keine  |
+   |  G.  | keines | keiner | keines | keiner |
+   |  D.  | keinem | keiner | keinem | keinen |
+   |  A.  | keinen | keine  | kein   | keine  |
+
+   > Wir haben heute keinen Unterricht.
+   >
+   > Ich habe kein Buch.
+
+### 强变化动词的现在时变位
+
+少数强变化动词，其现在时单数第二、三人称变位时，词干元音需变音或换音。
+
+（未完成）
 
 ## 单词
 
-<u>未完成</u>
+（未完成）
 
 
