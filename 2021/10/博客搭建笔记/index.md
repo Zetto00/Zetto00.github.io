@@ -38,19 +38,7 @@ choco install hugo-extended -y
 hugo version
 ```
 
-### 1.2 创建 GitHub 仓库
-
-注册一个 [GitHub](https://github.com)[^GitHub] 账号。注意：用户名与随后创建的博客网址强相关。在个人主界面里选择 “Create a repositor”。在 “Repository name” 的位置填写域名，格式是 `username.GitHub.io`，记作 `repo_name`。
-
-[^GitHub]: 科学访问请参考附录 I
-
-{{< admonition tip "提示">}}
-仓库名为 `username.GitHub.io`，则生成网址为  `username.GitHub.io`。
-
-仓库名为 `repo_name`，则生成网址为  `username.GitHub.io/repo_name`。
-{{< /admonition >}}
-
-### 1.3 安装 Git
+### 1.2 安装 Git
 
 从 [官方网站](https://git-scm.com) 下载，或使用命令行：
 
@@ -62,20 +50,34 @@ brew install git
 choco install git -y
 ```
 
-{{< admonition tip "关于 Xcode" false>}}
-macOS 下若安装过 Xcode，则自动安装了 Git。
+### 1.3 创建 GitHub 仓库
+
+注册一个 [GitHub](https://github.com)[^GitHub] 账号。
+
+注意：用户名与随后创建的博客网址强相关。此用户名记作 `<user_name>`。（本文用 `<>` 指代参数。）
+
+在个人主界面里选择 “Create a repository”。在 “Repository name” 的位置填写仓库名称，称为 `<repo_name>`，格式为 `<user_name>.github.io`。仓库权限为 “public”。
+
+[^GitHub]: 科学访问请参考附录 I
+
+{{< admonition tip "提示">}}
+当 `<repo_name>` 为 `<user_name>.github.io`，最后的博客网址为  `<user_name>.github.io`。
+
+否则，网址为  `<user_name>.github.io/<repo_name>`。
 {{< /admonition >}}
 
-## 2 发布你的第一篇博客！
+
+
+## 2 快速搭建
 
 ### 2.1 托管到 GitHub
 
-执行下述命令在本地生成博客项目文件夹，该文件夹是所有操作执行的根目录：
+打开命令行，在本地生成博客项目文件夹，该文件夹是所有操作执行的根目录：
 
 ```bash
-# 命令行先处在你喜欢的文件夹下
-hugo new site username.github.io # 目录名任取
-cd username.github.io
+# 希望博客项目放在哪个文件夹下，命令行就处于哪个文件夹下，如 D:\ 或 ～
+hugo new site <folder_name> # 目录名任取
+cd <folder_name>
 ```
 
 将本地的项目文件夹初始化为 Github 仓库：
@@ -86,9 +88,9 @@ git init # 生成 .git 文件夹
 
 {{<admonition tip "巧用 .gitignore" false>}}
 
-输入 `git status`，macOS 用户可能会看到 `.DS_Store` 文件。这是存储文件夹显示属性的文件，但我们并不想将其纳入 Git 的管理范围。在项目根目录里创建 `.gitignore` 文件并按 [glob 模式](https://www.gulpjs.com.cn/docs/getting-started/explaining-globs/) 匹配不想要的文件即可处理这种情况。若已暂存了不想要的文件，可以用 ``git rm -r --cached .``撤销文件暂存。
+输入 `git status`，macOS 用户可能会看到 `.DS_Store` 文件。这是存储文件夹显示属性的文件，但我们并不想将其纳入 Git 的管理范围。在项目根目录里创建 `.gitignore` 文件并按 [glob 模式](https://www.gulpjs.com.cn/docs/getting-started/explaining-globs/) 匹配不想要的文件即可处理这种情况。若已暂存了不想要的文件，可以用 ``git rm -r --cached .`` 撤销文件暂存。
 
-考虑到每个项目都不需要 `.DS_Store`，采用全局配置的方法。在用户文件夹（即 `Macintosh HD/Users/username`）下创建`.gitglobalignore` 文件，输入 `**/.DS_Store`；在命令行中输入：
+考虑到每个项目都不需要 `.DS_Store`，采用全局配置的方法。在用户文件夹（即 `Macintosh HD/Users/<user_name>`）下创建 `.gitglobalignore` 文件，在文件中输入 `**/.DS_Store`；在命令行中输入：
 
 ```bash
 git config --global core.excludesfile ~/.gitglobalignore
@@ -96,14 +98,14 @@ git config --global core.excludesfile ~/.gitglobalignore
 
 {{</admonition>}}
 
-与远程仓库建立连接需要 `token`。登陆 GitHub - 点击头像 - “Settings” - “Developer settings” - “Personal access tokens” - “Generate new token” 得到 `token`。
+与远程仓库建立连接需要 `<token>`。登陆 GitHub > 点击头像 > “Settings” > “Developer settings” > “Personal access tokens” > “Generate new token” 得到 `<token>`。“Expiration” 选择 “no expiration”，“Select scopes” 项全部勾选。
 
 将项目文件推送到远程仓库：
 
 ```bash
 git add . # 添加所有文件到暂存区
 git commit -m "Initial commit" # 提交暂存区到仓库区
-git remote add origin https://<token>@github.com/<username>/<repo_name>.git
+git remote add origin https://<token>@github.com/<user_name>/<repo_name>.git
 git push -u origin master # -u 将本地 master 分支与远程 master 分支关联
 ```
 
@@ -112,8 +114,56 @@ git push -u origin master # -u 将本地 master 分支与远程 master 分支关
 主题通常是单独的 Github 仓库，将其作为项目的子模块进行管理：
 
 ```bash
-git clone https://github.com/dillonzq/LoveIt.git themes/LoveIt
+git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 ```
+
+{{<admonition tip "加快下载速度" false>}}
+
+从 github.com 下载可能过慢，可以从 GitHub 的镜像网站下载：
+
+```bash
+git submodule add https://hub.fastgit.org/dillonzq/LoveIt.git themes/LoveIt
+```
+
+但这会导致后面的 GitHub Actions 报错。
+
+解决办法为：下载完毕后，打开文件 `/.gitmodules`，修改
+
+```bash
+[submodule "themes/LoveIt"]
+	path = themes/LoveIt
+	url = https://hub.fastgit.org/dillonzq/LoveIt.git
+```
+
+为
+
+```bash
+[submodule "themes/LoveIt"]
+	path = themes/LoveIt
+	url = https://github.com/dillonzq/LoveIt.git
+```
+
+打开 `/.git/config`，修改
+
+```bash
+[submodule "themes/LoveIt"]
+	url = https://hub.fastgit.org/dillonzq/LoveIt.git
+```
+
+为
+
+```bash
+[submodule "themes/LoveIt"]
+	url = https://github.com/dillonzq/LoveIt.git
+```
+
+打开命令行，输入：
+
+```bash
+git submodule sync
+```
+
+{{</admonition>}}
 
 以下是 [LoveIt](https://hugoloveit.com/zh-cn/) 主题的基础配置。使其全部代替根目录中 `config.toml`中的代码：
 
@@ -180,15 +230,13 @@ hugo new posts/first_post.md
 
 生成文件在 `/content/posts` 下。参考 [Markdown 基本语法](https://hugoloveit.com/zh-cn/basic-markdown-syntax/#5-内联-html-元素)，随意编辑文章。
 
+注意：把前置参数 `draft: false` 改为 `draft: true`，且文件内容不能为空。
+
 在本地渲染网站：
 
 ```bash
-hugo serve -D
+hugo serve
 ```
-
-{{< admonition note "关于草稿" false>}}
-默认情况下，所有文章和页面均作为草稿创建。如果想要渲染这些页面，请从元数据中删除属性 draft: true、设置属性 draft: false 或者为 hugo 命令添加 `-D/--buildDrafts` 参数。
-{{< /admonition >}}
 
 到 `http://localhost:1313` 查看你的博客！
 
@@ -215,24 +263,24 @@ git push --set-upstream origin blog
 git branch -vv
 ```
 
-可以看到类似于 `* blog c63526c [origin/blog] Update posts` 的字样。
+可以看到类似于 `* blog c63526c [origin/blog] Initial commit` 的字样。
 
-此时可能进入了 `vim` 编辑器模式，输入 `:wq` 保存并退出编辑器。
+输入 `:q` 退出。
 
 {{< /admonition >}}
 
-在网页端进入仓库 - “Settings” - “Branches”，将默认分支设置为 blog 分支。
+在网页端进入仓库 > “Settings” > “Branches”，切换默认分支为 `blog` 分支。
 
 生成公私钥供 Github Action 使用：
 
 ```bash
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com" -f blog -N ""
+ssh-keygen -t rsa -b 4096 -C "<your_email>@<example.com>" -f blog -N ""
 # 在此命令运行的目录下得到两个文件：
-#   blog.pub (public key)
-#   blog     (private key)
+#   blog.pub （公钥）
+#   blog     （私钥）
 ```
 
-进入仓库 - “Settings”，在 “Deploy Keys” 中添加公钥，勾选 “Allow write access”；在 “Secrets” 中添加私钥，私钥名设置为 `ACTIONS_DEPLOY_KEY`。
+进入仓库，点击 “Settings”，在 “Deploy Keys” 中添加公钥，勾选 “Allow write access”；在 “Secrets” 中添加私钥，私钥名设置为 `ACTIONS_DEPLOY_KEY`。
 
 新建若干文件夹与文件使得根目录包含：`/.github/workflows/main.yml`。写入 `main.yml`内容：
 
@@ -273,7 +321,7 @@ jobs:
 
 ```bash
 git add .
-git commit -m "" # 对本次提交的描述
+git commit -m "<description>" # 对本次提交的描述
 git push
 ```
 
@@ -298,7 +346,7 @@ Github Actions 使用一种模块化的思路，即将很多持续集成的操�
 
 可以到仓库 - “Actions” 中查看 `workflow` 是否运行成功或者排查错误。
 
-## 3 配置
+## 3 详细配置
 
 对网站进行更加个性化的定制。
 
@@ -307,7 +355,7 @@ Github Actions 使用一种模块化的思路，即将很多持续集成的操�
 使下列代码全部代替 `config.toml`中的代码：
 
 ```toml
-baseURL = "https://username.github.io"
+baseURL = "https://<user_name>.github.io"
 
 # [en, zh-cn, fr, ...] 设置默认的语言
 defaultContentLanguage = "zh-cn"
@@ -338,18 +386,17 @@ enableEmoji = true
 
 # 作者配置
 [author]
-  name = "x"
-  link = "https://username.github.io/about/"
+  name = "<name>"
+  link = "https://<user_name>.github.io/about/"
 
 # Permalinks Info (https://gohugo.io/content-management/urls/#permalinks)
 [Permalinks]
-  posts = ":year/:month/:slug"
+	# posts = ":year/:month/:filename"
+	# or
+	# posts = ":year/:month/:slug"
+  posts = "posts/:filename"
 
-# 网站地图配置
-[sitemap]
-  changefreq = "weekly"
-  filename = "sitemap.xml"
-  priority = 0.5
+
 
 [menu]
   [[menu.main]]
@@ -385,42 +432,6 @@ enableEmoji = true
     url = "about"
     weight = 4
 
-# Hugo 解析文档的配置
-[markup]
-  # 语法高亮设置
-  [markup.highlight]
-    codeFences = true
-    guessSyntax = true
-
-    # 代码行数设置
-    lineNos = true
-    lineNoStart = 1
-    lineNumbersInTable = true
-    tabWidth = 4
-    
-    #style = "monokai"
-
-    # (https://github.com/dillonzq/LoveIt/issues/158)
-    noClasses = false
-
-  # Goldmark 是 Hugo 0.60 以来的默认 Markdown 解析库
-  [markup.goldmark]
-    [markup.goldmark.extensions]
-      definitionList = true
-      footnote = true
-      linkify = true
-      strikethrough = true
-      table = true
-      taskList = true
-      typographer = true
-    [markup.goldmark.renderer]
-      # 是否在文档中直接使用 HTML 标签
-      unsafe = true
-  # 目录设置
-  [markup.tableOfContents]
-    startLevel = 2
-    endLevel = 6
-
 [params]
   # LoveIt 主题版本
   version = "0.2.X"
@@ -452,11 +463,11 @@ enableEmoji = true
       # 主页显示头像的 URL
       avatarURL = "/images/avatar.png"
       #  主页显示的网站标题 (支持 HTML 格式)
-      title = "title"
+      title = "title of blog"
       # 主页显示的网站副标题
-      subtitle = "subtitle"
+      subtitle = "subtitle of blog"
       # 是否为副标题显示打字机动画
-      typeit = true
+      typeit = false
       # 是否显示社交账号
       social = true
       #  免责声明 (支持 HTML 格式)
@@ -470,23 +481,63 @@ enableEmoji = true
       # 当你没有在文章前置参数中设置 "hiddenFromHomePage" 时的默认行为
       defaultHiddenFromHomePage = false
 
-  # 作者的社交信息设置
-  [params.social]
-    [params.social.GitHub]
-     # 排列图标时的权重
-      weight = 1
-      # 你的社交 ID
-      id = ""
-      # 你的社交链接的前缀
-      prefix = "https://github.com/"
-      # 当鼠标停留在图标上时的提示内容
-      title = "GitHub"
-    [params.social.Douban]
-      weight = 0
-      id = "" 
-      prefix = "https://www.douban.com/people/"
-      title = "豆瓣"
+  # 页面头部导航栏配置
+  [params.header]
+    # 桌面端导航栏模式 ("fixed", "normal", "auto")
+    desktopMode = "fixed"
+    # 移动端导航栏模式 ("fixed", "normal", "auto")
+    mobileMode = "auto"
+    #  页面头部导航栏标题配置
+    [params.header.title]
+      # LOGO 的 URL
+      logo = "/images/logo.png"
+      # 标题名称
+      name = "title of header"
+      # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
+      pre = ""
+      # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
+      post = ""
+      #  是否为标题显示打字机动画
+      typeit = false
 
+  # 页面底部信息配置
+  [params.footer]
+    enable = true
+    #  自定义内容 (支持 HTML 格式)
+    custom = ''
+    #  是否显示 Hugo 和主题信息
+    hugo = false
+    #  是否显示版权信息
+    copyright = true
+    #  是否显示作者
+    author = true
+    # 网站创立年份
+    since = 2021
+    # ICP 备案信息，仅在中国使用 (支持 HTML 格式)
+    icp = ""
+    # 许可协议信息 (支持 HTML 格式)
+    license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+
+	  # 作者的社交信息设置
+  [params.social]
+    [params.social.Douban]
+   		# 排列图标时的权重
+      weight = 0
+      # 你的社交 ID
+      id = "" 
+      # 你的社交链接的前缀
+      prefix = "https://www.douban.com/people/"
+      # 当鼠标停留在图标上时的提示内容
+      title = "豆瓣"
+      # 最终生成链接为 "https://www.douban.com/people/id"
+      # 可据此获得 id
+      
+    [params.social.GitHub]
+      weight = 1
+      id = ""
+      prefix = "https://github.com/"
+      title = "GitHub"
+      
     #Email = "xxxx@xxxx.com"
     #RSS = true
     #Googlescholar = ""
@@ -549,43 +600,6 @@ enableEmoji = true
     #Gitea = ""
     #XMPP = ""
     #Matrix = ""
-
-  # 页面头部导航栏配置
-  [params.header]
-    # 桌面端导航栏模式 ("fixed", "normal", "auto")
-    desktopMode = "fixed"
-    # 移动端导航栏模式 ("fixed", "normal", "auto")
-    mobileMode = "auto"
-    #  页面头部导航栏标题配置
-    [params.header.title]
-      # LOGO 的 URL
-      logo = "/images/logo.png"
-      # 标题名称
-      name = "title of header"
-      # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
-      pre = ""
-      # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
-      post = ""
-      #  是否为标题显示打字机动画
-      typeit = false
-
-  # 页面底部信息配置
-  [params.footer]
-    enable = true
-    #  自定义内容 (支持 HTML 格式)
-    custom = ''
-    #  是否显示 Hugo 和主题信息
-    hugo = false
-    #  是否显示版权信息
-    copyright = true
-    #  是否显示作者
-    author = true
-    # 网站创立年份
-    since = 2021
-    # ICP 备案信息，仅在中国使用 (支持 HTML 格式)
-    icp = ""
-    # 许可协议信息 (支持 HTML 格式)
-    license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
 
   #  文章页面配置
   [params.page]
@@ -892,6 +906,42 @@ enableEmoji = true
       dismiss = ""
       link = ""
 
+# Hugo 解析文档的配置
+[markup]
+  # 语法高亮设置
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+
+    # 代码行数设置
+    lineNos = true
+    lineNoStart = 1
+    lineNumbersInTable = true
+    tabWidth = 4
+    
+    #style = "monokai"
+
+    # (https://github.com/dillonzq/LoveIt/issues/158)
+    noClasses = false
+
+  # Goldmark 是 Hugo 0.60 以来的默认 Markdown 解析库
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.renderer]
+      # 是否在文档中直接使用 HTML 标签
+      unsafe = true
+  # 目录设置
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 6
+
 # 隐私信息配置(https://gohugo.io/about/hugo-and-gdpr/)
 [privacy]
   #  Google Analytics 相关隐私 (被 params.analytics.google 替代)
@@ -912,6 +962,12 @@ enableEmoji = true
   mediaType = "text/plain"
   isPlainText = true
   isHTML = false
+
+# 网站地图配置
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
 
 # 用于 Hugo 输出文档的设置
 [outputs]
@@ -938,6 +994,8 @@ enableEmoji = true
 访问 https://www.favicon-generator.org 或其他各类 favicon 生成网站，将得到的图片、`browserconfig.xml` 和 `site.webmanifest` 放置于 `/static` 目录。
 
 ## 4 文章发布
+
+总结发布文章的流程。
 
 使用 Hugo 创建文件：
 
@@ -983,7 +1041,9 @@ git push
 
 ## 附录 II 参考链接
 
-[1]：[LoveIt 文档](https://hugoloveit.com/zh-cn/posts/)
+[1]：[LoveIt 官方文档](https://hugoloveit.com/zh-cn/posts/)
 
 [2]：[书葬的博客](https://shuzang.github.io/tags/hugo/)（特别致谢！）
+
+[3]：[Hugo 官方文档]([Hugo Documentation | Hugo (gohugo.io)](https://gohugo.io/documentation/))
 
