@@ -1,0 +1,237 @@
+<!doctype html><html lang=zh-cn>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>Tapered Amplifer 搭建 - Z's Blog</title><meta name=Description content="项目笔记"><meta property="og:title" content="Tapered Amplifer 搭建">
+<meta property="og:description" content="项目笔记">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://Zetto.github.io/2023/07/tapered-amplifer-%E6%90%AD%E5%BB%BA/"><meta property="og:image" content="https://Zetto.github.io/logo.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2023-07-13T13:48:00+08:00">
+<meta property="article:modified_time" content="2023-07-13T13:48:00+08:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://Zetto.github.io/logo.png">
+<meta name=twitter:title content="Tapered Amplifer 搭建">
+<meta name=twitter:description content="项目笔记">
+<meta name=application-name content="LoveIt">
+<meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://Zetto.github.io/2023/07/tapered-amplifer-%E6%90%AD%E5%BB%BA/><link rel=prev href=https://Zetto.github.io/2021/12/%E5%BE%B7%E8%AF%AD%E7%AC%94%E8%AE%B0/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Tapered Amplifer 搭建","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/Zetto.github.io\/2023\/07\/tapered-amplifer-%E6%90%AD%E5%BB%BA\/"},"genre":"posts","keywords":"项目笔记","wordcount":1575,"url":"https:\/\/Zetto.github.io\/2023\/07\/tapered-amplifer-%E6%90%AD%E5%BB%BA\/","datePublished":"2023-07-13T13:48:00+08:00","dateModified":"2023-07-13T13:48:00+08:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Z"},"description":"项目笔记"}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=" Z's Blog"><img class="lazyload logo" src=/svg/loading.min.svg data-src=/images/logo.png data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x" data-sizes=auto alt=/images/logo.png title=/images/logo.png>Z's Blog</a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/> 文章 </a><a class=menu-item href=/tags/> 标签 </a><a class=menu-item href=/categories/> 专栏 </a><a class=menu-item href=/about> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=搜索>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=清空>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=" Z's Blog"><img class="lazyload logo" src=/svg/loading.min.svg data-src=/images/logo.png data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x" data-sizes=auto alt=/images/logo.png title=/images/logo.png>Z's Blog</a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=搜索>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=清空>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+取消
+</a>
+</div><a class=menu-item href=/posts/ title>文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>专栏</a><a class=menu-item href=/about title>关于</a><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title>目录</h2>
+<div class="toc-content always-active" id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">Tapered Amplifer 搭建</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=https://Zetto00.github.io/about/ title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Z</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E7%A7%91%E7%A0%94/><i class="far fa-folder fa-fw"></i>科研</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2023-07-13>2023-07-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1575 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
+</div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#光路计算>光路计算</a>
+<ul>
+<li><a href=#前提>前提</a></li>
+<li><a href=#提高单模光纤耦合效率>提高单模光纤耦合效率</a></li>
+<li><a href=#计算模场直径mfd>计算模场直径（MFD）</a></li>
+<li><a href=#计算柱面镜位置>计算柱面镜位置</a>
+<ul>
+<li><a href=#竖直方向>竖直方向</a></li>
+<li><a href=#水平方向>水平方向</a></li>
+</ul>
+</li>
+<li><a href=#在模块里放置柱面镜>在模块里放置柱面镜</a></li>
+</ul>
+</li>
+<li><a href=#设计放置芯片的铜壳>设计放置芯片的铜壳</a>
+<ul>
+<li><a href=#材料选择>材料选择</a></li>
+<li><a href=#设计细节>设计细节</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</div><div class=content id=content><ul>
+<li><a href="https://www.toptica-eagleyard.com/?L=1&_product-family=tapered-amplifier&_wavelength_p76485559=650.00%2C980.00&id=161" target=_blank rel="noopener noreffer">Tapered Amplifier - Toptica Eagleyard Products</a></li>
+<li>使用 TA 芯片为 GaAs Semiconductor Laser Diode
+<ul>
+<li><a href="https://www.toptica-eagleyard.com/ey-product/eyp-tpa-0808-02000-4006-cmt04-0000/?_application%5B0%5D=quantum-technology&_application[]=spectroscopy" target=_blank rel="noopener noreffer">TA 808nm 2W - Toptica Eagleyard</a></li>
+</ul>
+</li>
+</ul>
+<h2 id=光路计算>光路计算</h2>
+<h3 id=前提>前提</h3>
+<p>由于 TA 的锥形放大过程，出射高斯光束的竖直方向比水平方向更受约束，从而发散角度更大，分别为 28° 和 14°。同时，存在 astigmatism 现象，即两个方向焦点位置不同，水平方向比竖直方向提前 700um。</p>
+<p>要使光束很好地耦合到耦合头，一般的办法是使用透镜和柱面镜使光斑成为平行光，再用透镜组对光斑整形。这种方法可以随意选择柱透镜和透镜组的初始位置，再通过调透镜组提高耦合效率。</p>
+<p>若想省去透镜组，需要对柱面镜的位置选择进行计算，并且使用单模高斯光耦合到单模光纤的模型。</p>
+<h3 id=提高单模光纤耦合效率>提高单模光纤耦合效率</h3>
+<p><a href="https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=12211&tabname=%E5%85%89%E7%BA%A4" target=_blank rel="noopener noreffer">单模光纤耦合 | thorlabs</a></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://www.thorlabs.com/images/tabimages/MFD_Single_Mode_Fiber_A4-780.gif data-srcset="https://www.thorlabs.com/images/tabimages/MFD_Single_Mode_Fiber_A4-780.gif, https://www.thorlabs.com/images/tabimages/MFD_Single_Mode_Fiber_A4-780.gif 1.5x, https://www.thorlabs.com/images/tabimages/MFD_Single_Mode_Fiber_A4-780.gif 2x" data-sizes=auto alt=https://www.thorlabs.com/images/tabimages/MFD_Single_Mode_Fiber_A4-780.gif title=|600></p>
+<p>用模场直径（mode field diameter, MFD）来描述光束在光纤中传播的光斑大小。MFD 一般稍大于纤芯直径，多出的部分可以用光的波动性和倏逝波来理解。</p>
+<p>假设光纤端面为平面并和光纤轴垂直，达到最高耦合效率需要满足
+- 光为高斯强度轮廓
+- 从光纤端面正入射
+- 束腰位于光纤端面
+- 束腰中心对准纤芯中心
+- 束腰直径等于光纤模场直径</p>
+<h3 id=计算模场直径mfd>计算模场直径（MFD）</h3>
+<p>查得所用光纤 <a href=https://www.lbtek.com/product/471.html target=_blank rel="noopener noreffer">PMC780-APC</a> 模场直径为 5.3 um±1.0 um@850 nm，但我们的工作波长为 811 nm。</p>
+<p>对于 step-index single-mode fibers，存在近似公式
+$$\text{MFD} = 2a(0.65+\frac{1.619}{V^{3/2}}+\frac{2.879}{V^6})$$
+其中 a 为纤芯半径，V 为光纤所能容纳模式数
+$$V = \frac{2 \pi a}{\lambda} \text{NA}$$</p>
+<p>查得所用光纤纤芯直径为 4.5 um，NA 为 0.12，算得 V = 2.10，再代入 <a href=https://www.rp-photonics.com/mode_radius.html target=_blank rel="noopener noreffer">Calculator for the Mode Radius of a Step-index Fiber - RP photonics</a> 提供的计算器，可以算得模场半径为 2.74 um。</p>
+<h3 id=计算柱面镜位置>计算柱面镜位置</h3>
+<p>使用软件 <a href=https://gaussianbeam.sourceforge.net/ target=_blank rel="noopener noreffer">GaussianBeamVisualSimulation</a>。</p>
+<h4 id=竖直方向>竖直方向</h4>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=/images/%e7%a7%91%e7%a0%94/LensVertical.png data-srcset="/images/%E7%A7%91%E7%A0%94/LensVertical.png, /images/%e7%a7%91%e7%a0%94/LensVertical.png 1.5x, /images/%E7%A7%91%E7%A0%94/LensVertical.png 2x" data-sizes=auto alt=/images/%E7%A7%91%E7%A0%94/LensVertical.png title=/images/%E7%A7%91%E7%A0%94/LensVertical.png>
+使用小焦距透镜（聚焦能力强）聚焦发散程度大的竖直方向高斯光束，使其近似成为平行光。再在耦合头处放置透镜使其耦合到光纤。</p>
+<p>软件上，初始光束发散角为 28°（244 mrad）输入到 Divergence 栏（发散全角）。选择 f=4.51 mm 透镜，令透镜与光斑束腰的距离为焦距，实现很好的平行光。此时光斑半径为 1.13 mm。耦合头处，选择 f=12 mm 的透镜能很好地满足束腰半径等于模场半径的要求，且束腰位于光纤端面。</p>
+<h4 id=水平方向>水平方向</h4>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=/images/%e7%a7%91%e7%a0%94/LensHorizontal.png data-srcset="/images/%E7%A7%91%E7%A0%94/LensHorizontal.png, /images/%e7%a7%91%e7%a0%94/LensHorizontal.png 1.5x, /images/%E7%A7%91%E7%A0%94/LensHorizontal.png 2x" data-sizes=auto alt=/images/%E7%A7%91%E7%A0%94/LensHorizontal.png title=/images/%E7%A7%91%E7%A0%94/LensHorizontal.png>
+选择强聚焦透镜使得发散相对不大的水平方向过度聚焦，需要放置只对一个方向有聚焦效果的柱面镜使其成为平行光。</p>
+<p>软件上，注意存在 astigmatism，代入竖直方向已经得到的参数，选择 f=50.38 mm 的柱面镜，精心改变柱面镜位置，可以得到半径 0.94 mm的光斑，此时柱面镜距离上一个透镜 82.84 mm。</p>
+<h3 id=在模块里放置柱面镜>在模块里放置柱面镜</h3>
+<figure><a class=lightgallery href=/images/%E7%A7%91%E7%A0%94/TA.png title=/images/%E7%A7%91%E7%A0%94/TA.png data-thumbnail=/images/%E7%A7%91%E7%A0%94/TA.png data-sub-html="<h2>模块构型示意图</h2>">
+<img class=lazyload src=/svg/loading.min.svg data-src=/images/%e7%a7%91%e7%a0%94/TA.png data-srcset="/images/%E7%A7%91%E7%A0%94/TA.png, /images/%e7%a7%91%e7%a0%94/TA.png 1.5x, /images/%E7%A7%91%E7%A0%94/TA.png 2x" data-sizes=auto alt=/images/%E7%A7%91%E7%A0%94/TA.png width=450px>
+</a><figcaption class=image-caption>模块构型示意图</figcaption>
+</figure>
+<p>柱面镜的 z 向移动范围为前后 3 mm，常态为套筒拉出底座 3mm。</p>
+<p>已算得 x~82.84 mm，而小铜壳长度 a=15 mm，小铜壳外表面与壳底承距离 b=3.1 mm，柱面镜离其底座螺纹 c=14 mm（柱面镜拉出底座3mm）。假设工作状态下透镜紧贴小铜壳底面，有
+$$
+y = x - a - b + c \approx 78 mm
+$$</p>
+<p>软件调整发现，$x \in (78, 90)$ 均为较好的平行光，故 $y \in (74, 86)$。柱面镜的可调节范围为 6 mm，最终以 78 mm 为中心间隔 6 mm 阵列多排螺纹孔。</p>
+<h2 id=设计放置芯片的铜壳>设计放置芯片的铜壳</h2>
+<h3 id=材料选择>材料选择</h3>
+<p>以下为各种材料的性能。</p>
+<table>
+<thead>
+<tr>
+<th>材料</th>
+<th>黄铜</th>
+<th>无氧铜</th>
+<th>不锈钢</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>优点</td>
+<td>易加工</td>
+<td>导热性能好</td>
+<td>硬</td>
+</tr>
+<tr>
+<td>缺点</td>
+<td>导热性能差</td>
+<td>易氧化，导致地线不连接；难加工</td>
+<td>高精度加工难</td>
+</tr>
+</tbody>
+</table>
+<p>TA 芯片发热严重，需要温控，因此包裹它的铜壳材料为无氧铜。</p>
+<p>在以前的设计中，由于透镜外壳为不锈钢，承载它的螺柱选用不锈钢。改变透镜距离需要在不锈钢上做出精细的螺纹，一般的加工厂做不好。不锈钢旋进无氧铜的过程中由于螺纹不匹配，会产生金属屑。此时若再用力旋入，就会卡死；需要旋出不锈钢，清理干净金属屑再旋入。</p>
+<p>为了避免上述问题，新设计采用黄铜螺柱，螺柱旋入一个黄铜底座后再固定在无氧铜铜壳。黄铜是易于精密加工的材料，例如手表中的核心机械部件就是黄铜材料。</p>
+<h3 id=设计细节>设计细节</h3>
+<p>黄铜底座留有上下左右移动距离，弥补透镜芯片光心位置差异。</p>
+<p>黄铜螺柱需要保证透镜能在其最底部，因为透镜焦距小，芯片需要在透镜焦距范围内。因为非球面镜的实际焦距并非其参数标识，其实际焦距称为工作距离，焦距范围要按工作距离来确定。黄铜螺柱的外螺纹为光学螺纹，保证能精密调节透镜。</p>
+</div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>更新于 2023-07-13</span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md></div>
+<div class=post-info-share>
+<span></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/>项目笔记</a></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
+</section>
+</div>
+<div class=post-nav><a href=/2021/12/%E5%BE%B7%E8%AF%AD%E7%AC%94%E8%AE%B0/ class=prev rel=prev title=德语笔记><i class="fas fa-angle-left fa-fw"></i>德语笔记</a></div>
+</div>
+</article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021 - 2023</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://Zetto00.github.io/about/ target=_blank>Z</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部>
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title=查看评论>
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lunr/lunr.stemmer.support.min.js></script><script type=text/javascript src=/lib/lunr/lunr.zh.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript src=/lib/katex/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",lunrLanguageCode:"zh",lunrSegmentitURL:"/lib/lunr/lunr.segmentit.js",maxResultLength:10,noResultsFound:"没有找到结果",snippetLength:50,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script></body>
+</html>

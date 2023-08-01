@@ -3,33 +3,23 @@
 
 <!--more-->
 
-本博客使用 GitHub Pages、Hugo 和 LoveIt，可以高度~~麻烦地~~定制化博客。
+本博客使用 GitHub Pages 发布、Hugo 搭建和 LoveIt 主题。
 
 |      | GitHub Pages                                                 | Hugo                                   | LoveIt                   |
 | ---- | ------------------------------------------------------------ | -------------------------------------- | ------------------------ |
-| 优点 | 无须购买云服务，支持的功能多，玩法丰富                       | 基于 go 开发，更快及不必安装一堆依赖   | 简洁                     |
+| 优点 | 无须购买云服务                       | 基于 go 开发，更快及不必安装一堆依赖   | 简洁                     |
 | 缺点 | 项目和网站的大小不超过 1GB，每小时不超过 10 个版本，每个月带宽使用上限为 100GB | 更年轻，功能性和稳定性欠缺，支持主题少 | 作者上次更新还是在2020年 |
 
-## 1 准备
+## 1 准备工作
 
 ### 1.1 安装 Hugo
 
-详细的安装说明请参考 [官方文档](https://gohugo.io/getting-started/installing/)。注意安装 extended 版本。
+详细的安装说明请参考 [Hugo 官方文档](https://gohugo.io/getting-started/installing/)。注意安装 extended 版本。
 
 macOS 下可使用包管理工具 [Homebrew](https://brew.sh) 快速安装：
 
-```bash
+```shell
 brew install hugo
-```
-
-Windows 下可使用包管理工具 [chocolatey](https://chocolatey.org/) 快速安装。以管理员权限打开 `cmd.exe`：~~没运行过，不保证这段代码的可行性~~
-
-```bash
-# 安装 chocolatey
-@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
-
-# 安装 Hugo
-choco install hugo-extended -y
 ```
 
 验证 Hugo 是否安装成功：
@@ -40,14 +30,10 @@ hugo version
 
 ### 1.2 安装 Git
 
-从 [官方网站](https://git-scm.com) 下载，或使用命令行：
+从 [Git 官方网站](https://git-scm.com) 下载，或使用命令行：
 
 ```bash
 brew install git
-```
-
-```bash
-choco install git -y
 ```
 
 ### 1.3 创建 GitHub 仓库
@@ -56,17 +42,15 @@ choco install git -y
 
 注意：用户名与随后创建的博客网址强相关。此用户名记作 `<user_name>`（这里 `<>` 指代参数，下同）。
 
-在个人主界面里选择 “Create a repository”。在 “Repository name” 的位置填写仓库名称，称为 `<repo_name>`，格式为 `<user_name>.github.io`。仓库权限为 “public”。
+在个人主界面里选择 "Create a repository”。在 “Repository name” 的位置填写仓库名称，称为 `<repo_name>`，其格式为 `<user_name>.github.io`。仓库权限为 “public”。
 
 {{< admonition tip "提示">}}
-当 `<repo_name>` 为 `<user_name>.github.io` 时，最后的博客网址为  `<user_name>.github.io`；
+当 `<repo_name>` 为 `<user_name>.github.io` 时，最后生成的博客网址为  `<user_name>.github.io`；
 
 否则，网址为  `<user_name>.github.io/<repo_name>`。
 {{< /admonition >}}
 
-
-
-## 2 快速搭建
+## 2 搭建博客
 
 ### 2.1 托管到 GitHub
 
@@ -325,7 +309,7 @@ git push
 
 就可以在 `https://username.github.io` 中看到你的博客网站了！
 
-#### 2.3.2 思路
+#### 2.3.2 部署原理
 
 按照 Hugo 的生成规则，执行 `hugo` 命令后，网站静态文件将会生成在 `/public` 文件夹。但由于我们使用 Github Pages 托管博客网站，该功能启用后 Github 仓库只会从 `master branch` 或 `master branch /docs folder` 读取网站源码。
 
@@ -1023,7 +1007,7 @@ git push
 
 [1]：[LoveIt 官方文档](https://hugoloveit.com/zh-cn/posts/)
 
-[2]：[书葬的博客](https://shuzang.github.io/tags/hugo/)（特别致谢！）
+[2]：[书葬的博客](https://shuzang.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/)（特别致谢！）
 
 [3]：[Hugo 官方文档](https://gohugo.io/documentation/)
 
