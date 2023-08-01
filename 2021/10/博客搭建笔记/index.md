@@ -113,30 +113,30 @@ git submodule add https://hub.fastgit.org/dillonzq/LoveIt.git themes/LoveIt
 
 ```bash
 [submodule "themes/LoveIt"]
-	path = themes/LoveIt
-	url = https://hub.fastgit.org/dillonzq/LoveIt.git
+  path = themes/LoveIt
+  url = https://hub.fastgit.org/dillonzq/LoveIt.git
 ```
 
 为
 
 ```bash
 [submodule "themes/LoveIt"]
-	path = themes/LoveIt
-	url = https://github.com/dillonzq/LoveIt.git
+  path = themes/LoveIt
+  url = https://github.com/dillonzq/LoveIt.git
 ```
 
 打开 `/.git/config`，修改
 
 ```bash
 [submodule "themes/LoveIt"]
-	url = https://hub.fastgit.org/dillonzq/LoveIt.git
+  url = https://hub.fastgit.org/dillonzq/LoveIt.git
 ```
 
 为
 
 ```bash
 [submodule "themes/LoveIt"]
-	url = https://github.com/dillonzq/LoveIt.git
+  url = https://github.com/dillonzq/LoveIt.git
 ```
 
 打开命令行，输入：
@@ -1007,14 +1007,18 @@ git push
 图片放置在 `assets/images/subfolder/image.png`。
 
 使用 markdown 语法插入图片：
+
 ```markdown
 ![](/images/subfolder/image.png)
 ```
 
 或者使用 [LoveIt 主题提供的 shortcodes](https://hugoloveit.com/zh-cn/theme-documentation-extended-shortcodes/#image)：
 
-`{{< image src="/images/subfolder/image.png" width=450px caption="caption">}}`
+```markdown
+{{</* image src="/images/subfolder/image.png" width=450px caption="caption"*/>}}
+```
 
+图片默认居左。若有 `caption` 参数可使图片居中。
 
 ## 附录 参考链接
 

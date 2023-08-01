@@ -1,0 +1,163 @@
+<!doctype html><html lang=zh-cn>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<title>noise eater 使用 - Z's Blog</title><meta name=Description content="项目笔记"><meta property="og:title" content="noise eater 使用">
+<meta property="og:description" content="项目笔记">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://Zetto.github.io/2023/07/noise-eater-%E4%BD%BF%E7%94%A8/"><meta property="og:image" content="https://Zetto.github.io/logo.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2023-07-14T13:48:00+08:00">
+<meta property="article:modified_time" content="2023-07-14T13:48:00+08:00"><meta property="og:site_name" content="My cool site">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://Zetto.github.io/logo.png">
+<meta name=twitter:title content="noise eater 使用">
+<meta name=twitter:description content="项目笔记">
+<meta name=application-name content="LoveIt">
+<meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://Zetto.github.io/2023/07/noise-eater-%E4%BD%BF%E7%94%A8/><link rel=prev href=https://Zetto.github.io/2023/07/tapered-amplifer-%E6%90%AD%E5%BB%BA/><link rel=stylesheet href=/css/style.min.css><link rel=preload href=/lib/fontawesome-free/all.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
+<noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload href=/lib/animate/animate.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
+<noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"noise eater 使用","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/Zetto.github.io\/2023\/07\/noise-eater-%E4%BD%BF%E7%94%A8\/"},"genre":"posts","keywords":"项目笔记","wordcount":446,"url":"https:\/\/Zetto.github.io\/2023\/07\/noise-eater-%E4%BD%BF%E7%94%A8\/","datePublished":"2023-07-14T13:48:00+08:00","dateModified":"2023-07-14T13:48:00+08:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Z"},"description":"项目笔记"}</script></head>
+<body data-header-desktop=fixed data-header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=" Z's Blog"><img class="lazyload logo" src=/svg/loading.min.svg data-src=/images/logo.png data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x" data-sizes=auto alt=/images/logo.png title=/images/logo.png>Z's Blog</a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/> 文章 </a><a class=menu-item href=/tags/> 标签 </a><a class=menu-item href=/categories/> 专栏 </a><a class=menu-item href=/about> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=搜索>
+<i class="fas fa-search fa-fw" aria-hidden=true></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=清空>
+<i class="fas fa-times-circle fa-fw" aria-hidden=true></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin" aria-hidden=true></i>
+</span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw" aria-hidden=true></i>
+</a></div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=" Z's Blog"><img class="lazyload logo" src=/svg/loading.min.svg data-src=/images/logo.png data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x" data-sizes=auto alt=/images/logo.png title=/images/logo.png>Z's Blog</a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=搜索>
+<i class="fas fa-search fa-fw" aria-hidden=true></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=清空>
+<i class="fas fa-times-circle fa-fw" aria-hidden=true></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin" aria-hidden=true></i>
+</span>
+</div>
+<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+取消
+</a>
+</div><a class=menu-item href=/posts/ title>文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>专栏</a><a class=menu-item href=/about title>关于</a><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw" aria-hidden=true></i>
+</a></div>
+</div>
+</header><div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div><main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title>目录</h2>
+<div class="toc-content always-active" id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">noise eater 使用</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=https://Zetto00.github.io/about/ title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw" aria-hidden=true></i>Z</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E7%A7%91%E7%A0%94/><i class="far fa-folder fa-fw" aria-hidden=true></i>科研</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2023-07-14>2023-07-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;约 446 字&nbsp;
+<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
+</div><div class="details toc" id=toc-static data-kept>
+<div class="details-summary toc-title">
+<span>目录</span>
+<span><i class="details-icon fas fa-angle-right" aria-hidden=true></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#内部pid算法>内部PID算法</a></li>
+<li><a href=#前置半波片调最小原理>前置半波片调最小原理</a>
+<ul>
+<li><a href=#假说一>假说一</a></li>
+<li><a href=#假说二>假说二</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</div><div class=content id=content><p><a href="https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_ID=6107" target=_blank rel="noopener noreffer ">液晶噪声衰减器/激光振幅稳定器 | thorlabs</a></p>
+<h1 id=调节方式>调节方式</h1>
+<p>调整 noise eater 前的半波片，使得 noise eater 后功率最小。</p>
+<p>将档位旋至合适，旋钮旋至最大，逐渐旋小旋钮，当 noise eater 上灯从红变绿，调节完成。</p>
+<p>旋钮越旋小，出射功率越低。一般低了半波片旋至最大且 noise eater 不启动时的功率的 10%为佳。</p>
+<h1 id=原理>原理</h1>
+<figure><a class=lightgallery href=https://www.thorlabs.com/images/TabImages/Noise_Eater_Schematic_D2-780.gif title=https://www.thorlabs.com/images/TabImages/Noise_Eater_Schematic_D2-780.gif data-thumbnail=https://www.thorlabs.com/images/TabImages/Noise_Eater_Schematic_D2-780.gif data-sub-html="<h2>Noise Eater Schematic</h2>">
+<img class=lazyload src=/svg/loading.min.svg data-src=https://www.thorlabs.com/images/TabImages/Noise_Eater_Schematic_D2-780.gif data-srcset="https://www.thorlabs.com/images/TabImages/Noise_Eater_Schematic_D2-780.gif, https://www.thorlabs.com/images/TabImages/Noise_Eater_Schematic_D2-780.gif 1.5x, https://www.thorlabs.com/images/TabImages/Noise_Eater_Schematic_D2-780.gif 2x" data-sizes=auto alt=https://www.thorlabs.com/images/TabImages/Noise_Eater_Schematic_D2-780.gif>
+</a><figcaption class=image-caption>Noise Eater Schematic</figcaption>
+</figure>
+<figure><a class=lightgallery href=/images/%E7%A7%91%E7%A0%94/noise%20eater_2023-07-10_19.57.14.excalidraw.png title=/images/%E7%A7%91%E7%A0%94/noise%20eater_2023-07-10_19.57.14.excalidraw.png data-thumbnail=/images/%E7%A7%91%E7%A0%94/noise%20eater_2023-07-10_19.57.14.excalidraw.png data-sub-html="<h2>原理示意图</h2>">
+<img class=lazyload src=/svg/loading.min.svg data-src=/images/%E7%A7%91%E7%A0%94/noise%20eater_2023-07-10_19.57.14.excalidraw.png data-srcset="/images/%E7%A7%91%E7%A0%94/noise%20eater_2023-07-10_19.57.14.excalidraw.png, /images/%E7%A7%91%E7%A0%94/noise%20eater_2023-07-10_19.57.14.excalidraw.png 1.5x, /images/%E7%A7%91%E7%A0%94/noise%20eater_2023-07-10_19.57.14.excalidraw.png 2x" data-sizes=auto alt=/images/%E7%A7%91%E7%A0%94/noise%20eater_2023-07-10_19.57.14.excalidraw.png width=1155 height=794>
+</a><figcaption class=image-caption>原理示意图</figcaption>
+</figure>
+<h2 id=内部pid算法>内部PID算法</h2>
+<p>不同档位设定了不同目标电压，旋钮旋转改变目标电压。PID 算法保证信号电压锁至目标电压。</p>
+<p>过小的档位会导致过小的最大出光功率。过大的档位会导致亮红灯，锁不到目标电压。</p>
+<h2 id=前置半波片调最小原理>前置半波片调最小原理</h2>
+<h3 id=假说一>假说一</h3>
+<p>液晶波片需要启动电压才能使排列从杂乱无序到整齐划一。调节前置波片使出光功率最小，即使是最低档位（1mW）的目标电压也高于初始电压，这个差值使得 PID 施加在液晶波片上的电压高于启动电压。</p>
+<h3 id=假说二>假说二</h3>
+<p>初始电压信号过大会使得 PID 算法根本不起作用。</p>
+<ul>
+<li>TODO 验证办法：半波片调节至一半，观察档位和功率关系</li>
+</ul>
+<h1 id=beam-splitter-不同分光比影响>beam splitter 不同分光比影响</h1>
+<p>测得原始分光比为 85:15。</p>
+<p>若分给功率探头的光在相同入射光功率下比原始分光比的多，即上图曲线幅值增大，那么档位相对调高。</p></div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>更新于 2023-07-14</span>
+</div></div>
+<div class=post-info-line>
+<div class=post-info-md></div>
+<div class=post-info-share>
+<span></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw" aria-hidden=true></i>&nbsp;<a href=/tags/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/>项目笔记</a></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
+</section>
+</div>
+<div class=post-nav><a href=/2023/07/tapered-amplifer-%E6%90%AD%E5%BB%BA/ class=prev rel=prev title="Tapered Amplifer 搭建"><i class="fas fa-angle-left fa-fw" aria-hidden=true></i>Tapered Amplifer 搭建</a></div>
+</div>
+</article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line itemscope itemtype=http://schema.org/CreativeWork><i class="far fa-copyright fa-fw" aria-hidden=true></i><span itemprop=copyrightYear>2021 - 2023</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://Zetto00.github.io/about/ target=_blank>Z</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部>
+<i class="fas fa-arrow-up fa-fw" aria-hidden=true></i>
+</a><a href=# id=view-comments class=fixed-button title=查看评论>
+<i class="fas fa-comment fa-fw" aria-hidden=true></i>
+</a>
+</div><link rel=stylesheet href=/lib/katex/katex.min.css><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lunr/lunr.stemmer.support.min.js></script><script type=text/javascript src=/lib/lunr/lunr.zh.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/contrib/auto-render.min.js></script><script type=text/javascript src=/lib/katex/contrib/copy-tex.min.js></script><script type=text/javascript src=/lib/katex/contrib/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!0,left:"\\begin{equation}",right:"\\end{equation}"},{display:!0,left:"\\begin{equation*}",right:"\\end{equation*}"},{display:!0,left:"\\begin{align}",right:"\\end{align}"},{display:!0,left:"\\begin{align*}",right:"\\end{align*}"},{display:!0,left:"\\begin{alignat}",right:"\\end{alignat}"},{display:!0,left:"\\begin{alignat*}",right:"\\end{alignat*}"},{display:!0,left:"\\begin{gather}",right:"\\end{gather}"},{display:!0,left:"\\begin{CD}",right:"\\end{CD}"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",lunrLanguageCode:"zh",lunrSegmentitURL:"/lib/lunr/lunr.segmentit.js",maxResultLength:10,noResultsFound:"没有找到结果",snippetLength:50,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script></body>
+</html>

@@ -1,5 +1,6 @@
 # Tapered Amplifer 搭建
 
+<!--more-->
 
 - [Tapered Amplifier - Toptica Eagleyard Products](https://www.toptica-eagleyard.com/?L=1&_product-family=tapered-amplifier&_wavelength_p76485559=650.00%2C980.00&id=161)
 - 使用 TA 芯片为 GaAs Semiconductor Laser Diode
